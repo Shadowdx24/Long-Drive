@@ -76,7 +76,16 @@ public class CarController : MonoBehaviour
         {
             currHealth--;
             setHealth(currHealth);
-            Debug.Log(currHealth);
+            
+            Destroy(collision.gameObject);
+        }
+        else if (collision.gameObject.CompareTag("fuel"))
+        {
+            if(currHealth < maxHealth) 
+            {
+                currHealth++;
+                setHealth(currHealth);
+            }
             Destroy(collision.gameObject);
         }
     }
