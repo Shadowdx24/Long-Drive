@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class CarController : MonoBehaviour
 {
@@ -9,10 +10,14 @@ public class CarController : MonoBehaviour
     [SerializeField] private float rotationAngle = 1.0f;
     private bool goingLeft;
     private bool goingRight;
+    private float currHealth;
+    [SerializeField]private float maxHealth = 10;
+    [SerializeField] private Slider healthSlider;
     // Start is called before the first frame update
     void Start()
     {
-        
+        currHealth = maxHealth;
+        setHealth(currHealth);
     }
 
     // Update is called once per frame
@@ -63,5 +68,20 @@ public class CarController : MonoBehaviour
     private void resetRotation()
     {
         transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.Euler(0, 0, 0), rotationSpeed * Time.deltaTime);
+    }
+   
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("enemy"))
+        {
+            currHealth--;
+            setHealth(currHealth);
+            Debug.Log(currHealth);
+            Destroy(collision.gameObject);
+        }
+    }
+    private void setHealth(float val)
+    {
+        healthSlider.value = val;
     }
 }
