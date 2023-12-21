@@ -339,7 +339,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 84213463}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 159245415}
+        m_TargetAssemblyTypeName: Home, Assembly-CSharp
+        m_MethodName: CarGarage
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &84213463
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -460,7 +472,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 128355014}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 159245415}
+        m_TargetAssemblyTypeName: Home, Assembly-CSharp
+        m_MethodName: GameStart
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &128355014
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -511,6 +535,7 @@ GameObject:
   - component: {fileID: 159245413}
   - component: {fileID: 159245412}
   - component: {fileID: 159245411}
+  - component: {fileID: 159245415}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -606,6 +631,18 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &159245415
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 159245410}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30ca99dc36ef4374889c3f3dfcabb034, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &179619996
 GameObject:
   m_ObjectHideFlags: 0
@@ -1674,7 +1711,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1991927241}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 159245415}
+        m_TargetAssemblyTypeName: Home, Assembly-CSharp
+        m_MethodName: GameQuit
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1991927241
 MonoBehaviour:
   m_ObjectHideFlags: 0
