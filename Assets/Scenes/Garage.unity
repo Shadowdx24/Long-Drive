@@ -135,6 +135,7 @@ GameObject:
   - component: {fileID: 159245413}
   - component: {fileID: 159245412}
   - component: {fileID: 159245411}
+  - component: {fileID: 159245415}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -234,6 +235,26 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &159245415
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 159245410}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 747dcbb25c23e2444b726e5cdd54dc09, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  carSelection: {fileID: 1934576613}
+  carImages:
+  - {fileID: 21300000, guid: e964dcf7e7c8e43c5864020c5100e966, type: 3}
+  - {fileID: 21300000, guid: c862f765cb6f04cbe8761ed6716f854b, type: 3}
+  - {fileID: 21300000, guid: 8da3d3b1471a747bf88d06a643cf1e15, type: 3}
+  - {fileID: 21300000, guid: b0318d0db12914b9e9cc242036a8929d, type: 3}
+  - {fileID: 21300000, guid: 292fed72a8cc44f5c9e2d39f013fae39, type: 3}
+  - {fileID: 21300000, guid: ce8c651e3a7494bb7b27f580c7c98fad, type: 3}
 --- !u!1 &189619811
 GameObject:
   m_ObjectHideFlags: 0
@@ -936,7 +957,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 917576033}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 159245415}
+        m_TargetAssemblyTypeName: Garage, Assembly-CSharp
+        m_MethodName: PrevCar
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &917576033
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -950,7 +983,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -1324,7 +1357,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1346988678}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 159245415}
+        m_TargetAssemblyTypeName: Garage, Assembly-CSharp
+        m_MethodName: NextCar
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1346988678
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1338,7 +1383,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
