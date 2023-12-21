@@ -13,6 +13,8 @@ public class CarController : MonoBehaviour
     private float currHealth;
     [SerializeField]private float maxHealth = 10;
     [SerializeField] private Slider healthSlider;
+    private int score = 0;
+    private float gameTime = 0f;
     // Start is called before the first frame update
     void Start()
     {
@@ -37,7 +39,9 @@ public class CarController : MonoBehaviour
         {
             resetRotation();
         }
-        
+        gameTime = Time.time;
+        score = (int)gameTime;
+        Debug.Log(score);
     }
     private void LeftSide()
     {
@@ -78,6 +82,11 @@ public class CarController : MonoBehaviour
             setHealth(currHealth);
             
             Destroy(collision.gameObject);
+            if(currHealth == 0)
+            {
+                Debug.Log("Game Over");
+                
+            }
         }
         else if (collision.gameObject.CompareTag("fuel"))
         {
