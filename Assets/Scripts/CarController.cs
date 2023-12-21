@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.SearchService;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class CarController : MonoBehaviour
@@ -15,6 +17,7 @@ public class CarController : MonoBehaviour
     [SerializeField] private Slider healthSlider;
     private int score = 0;
     private float gameTime = 0f;
+    [SerializeField] GameObject GameOverScene;
     // Start is called before the first frame update
     void Start()
     {
@@ -85,7 +88,7 @@ public class CarController : MonoBehaviour
             if(currHealth == 0)
             {
                 Debug.Log("Game Over");
-                
+                GameOver();
             }
         }
         else if (collision.gameObject.CompareTag("fuel"))
@@ -101,5 +104,26 @@ public class CarController : MonoBehaviour
     private void setHealth(float val)
     {
         healthSlider.value = val;
+    }
+    private void GameOver()
+    {
+        GameOverScene.SetActive(true);
+        Time.timeScale = 0f;
+    }
+    public void Restart()
+    {
+        SceneManager.LoadScene(1);
+        Time.timeScale = 1.0f;
+        GameOverScene.SetActive(false);
+        //score = 0;
+    }
+    public void GameHome()
+    {
+        SceneManager.LoadScene(0);
+        //Time.timeScale = 1.0f;
+    }
+    public void GameQuit()
+    {
+        Application.Quit();
     }
 }
