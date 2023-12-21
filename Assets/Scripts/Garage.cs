@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class Garage : MonoBehaviour
@@ -41,5 +42,16 @@ public class Garage : MonoBehaviour
         }
         carIndex = carNumber;
         carSelection.sprite = carImages[carIndex];
+    }
+    public void GameStart()
+    {
+        SceneManager.LoadScene(1);
+        Time.timeScale = 1.0f;
+    }
+
+    public void GameHome()
+    {
+        SceneManager.LoadScene(0);
+        //Time.timeScale = 1.0f;
     }
 }
