@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEditor.SearchService;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -16,8 +17,12 @@ public class CarController : MonoBehaviour
     [SerializeField]private float maxHealth = 10;
     [SerializeField] private Slider healthSlider;
     private int score = 0;
+    private int money = 0;
     private float gameTime = 0f;
     [SerializeField] GameObject GameOverScene;
+    [SerializeField] GameObject GamePauseScene;
+    [SerializeField] TextMeshProUGUI scoreText;
+    [SerializeField] TextMeshProUGUI moneyText;
     // Start is called before the first frame update
     void Start()
     {
@@ -45,6 +50,8 @@ public class CarController : MonoBehaviour
         gameTime = Time.time;
         score = (int)gameTime;
         Debug.Log(score);
+        money = (int)(score / 5);
+      
     }
     private void LeftSide()
     {
@@ -109,13 +116,27 @@ public class CarController : MonoBehaviour
     {
         GameOverScene.SetActive(true);
         Time.timeScale = 0f;
+        scoreText.text = "Score:" + score;
+        moneyText.text = "Money:" + money;
+    }
+    public void GamePause()
+    {
+        GamePauseScene.SetActive(true);
+        Time.timeScale = 0f;
+    }
+    public void Resume()
+    {
+        Time.timeScale = 1.0f;
+        GamePauseScene.SetActive(false);
     }
     public void Restart()
     {
         SceneManager.LoadScene(1);
         Time.timeScale = 1.0f;
         GameOverScene.SetActive(false);
-        //score = 0;
+        score = 0;
+        money = 0;
+        
     }
     public void GameHome()
     {
