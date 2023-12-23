@@ -9,6 +9,7 @@ public class Garage : MonoBehaviour
     [SerializeField] private Image carSelection;
     [SerializeField] private Sprite[] carImages;
     private int carIndex;
+    [SerializeField] GameObject GameSettingScene;
     // Start is called before the first frame update
     void Start()
     {
@@ -53,5 +54,9 @@ public class Garage : MonoBehaviour
     {
         SceneManager.LoadScene(0);
         //Time.timeScale = 1.0f;
+    }
+    public void GameSetting()
+    {
+        GameSettingScene.SetActive(true);
     }
 }

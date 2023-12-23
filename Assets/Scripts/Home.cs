@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class Home : MonoBehaviour
 {
+    [SerializeField] GameObject GameSettingScene;
     // Start is called before the first frame update
     void Start()
     {
@@ -26,10 +27,17 @@ public class Home : MonoBehaviour
     public void CarGarage()
     {
         SceneManager.LoadScene(2);
-        //Time.timeScale = 1.0f;
     }
     public void GameQuit()
     {
         Application.Quit();
+    }
+    public void GameSetting()
+    {
+        GameSettingScene.SetActive(true);
+    }
+    public void GameHome()
+    {
+        GameSettingScene.SetActive(false);
     }
 }
