@@ -116,8 +116,8 @@ public class CarController : MonoBehaviour
     {
         GameOverScene.SetActive(true);
         Time.timeScale = 0f;
-        scoreText.text = "Score:" + score;
-        moneyText.text = "Money:" + money;
+        scoreText.text = "Score :" + score;
+        moneyText.text = "Money :" + money;
     }
     public void GamePause()
     {
@@ -141,7 +141,6 @@ public class CarController : MonoBehaviour
     public void GameHome()
     {
         SceneManager.LoadScene(0);
-        //Time.timeScale = 1.0f;
     }
     public void GameQuit()
     {
