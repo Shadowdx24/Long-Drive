@@ -23,11 +23,16 @@ public class CarController : MonoBehaviour
     [SerializeField] GameObject GamePauseScene;
     [SerializeField] TextMeshProUGUI scoreText;
     [SerializeField] TextMeshProUGUI moneyText;
+    [SerializeField] private SpriteRenderer carSelection;
+    [SerializeField] private Sprite[] carImages;
+    private int currCar;
     // Start is called before the first frame update
     void Start()
     {
         currHealth = maxHealth;
         setHealth(currHealth);
+        currCar = PlayerPrefs.GetInt("MainCar");
+        carSelection.sprite = carImages[currCar];
     }
 
     // Update is called once per frame

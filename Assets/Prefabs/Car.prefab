@@ -174,3 +174,17 @@ MonoBehaviour:
   speed: 5
   rotationSpeed: 5
   rotationAngle: 30
+  maxHealth: 10
+  healthSlider: {fileID: 0}
+  GameOverScene: {fileID: 0}
+  GamePauseScene: {fileID: 0}
+  scoreText: {fileID: 0}
+  moneyText: {fileID: 0}
+  carSelection: {fileID: 5359333552695503723}
+  carImages:
+  - {fileID: 21300000, guid: e964dcf7e7c8e43c5864020c5100e966, type: 3}
+  - {fileID: 21300000, guid: c862f765cb6f04cbe8761ed6716f854b, type: 3}
+  - {fileID: 21300000, guid: 8da3d3b1471a747bf88d06a643cf1e15, type: 3}
+  - {fileID: 21300000, guid: b0318d0db12914b9e9cc242036a8929d, type: 3}
+  - {fileID: 21300000, guid: 292fed72a8cc44f5c9e2d39f013fae39, type: 3}
+  - {fileID: 21300000, guid: ce8c651e3a7494bb7b27f580c7c98fad, type: 3}

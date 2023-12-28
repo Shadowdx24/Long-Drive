@@ -43,6 +43,7 @@ public class Garage : MonoBehaviour
         }
         carIndex = carNumber;
         carSelection.sprite = carImages[carIndex];
+        PlayerPrefs.SetInt("MainCar",carIndex);
     }
     public void GameStart()
     {
