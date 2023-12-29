@@ -56,6 +56,7 @@ public class CarController : MonoBehaviour
         score = (int)gameTime;
         Debug.Log(score);
         money = (int)(score / 5);
+        PlayerPrefs.SetInt("Money", money);
       
     }
     private void LeftSide()
@@ -95,7 +96,8 @@ public class CarController : MonoBehaviour
         {
             currHealth--;
             setHealth(currHealth);
-            
+            AudioManager.instance.Play("Crash");
+
             Destroy(collision.gameObject);
             if(currHealth == 0)
             {
@@ -109,8 +111,10 @@ public class CarController : MonoBehaviour
             {
                 currHealth++;
                 setHealth(currHealth);
+                AudioManager.instance.Play("Fuel");
             }
             Destroy(collision.gameObject);
+            AudioManager.instance.Play("Fuel");
         }
     }
     private void setHealth(float val)
@@ -123,6 +127,7 @@ public class CarController : MonoBehaviour
         Time.timeScale = 0f;
         scoreText.text = "Score :" + score;
         moneyText.text = "Money :" + money;
+        AudioManager.instance.Play("Game Over");
     }
     public void GamePause()
     {
@@ -141,11 +146,13 @@ public class CarController : MonoBehaviour
         GameOverScene.SetActive(false);
         score = 0;
         money = 0;
-        
+        AudioManager.instance.Stop("Game Over");
+
     }
     public void GameHome()
     {
         SceneManager.LoadScene(0);
+        AudioManager.instance.Play("Home");
     }
     public void GameQuit()
     {

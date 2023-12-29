@@ -23,6 +23,7 @@ public class Home : MonoBehaviour
     {
         SceneManager.LoadScene(1);
         Time.timeScale = 1.0f;
+        AudioManager.instance.Stop("Home");
     }
     public void CarGarage()
     {

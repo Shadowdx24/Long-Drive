@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -10,10 +11,15 @@ public class Garage : MonoBehaviour
     [SerializeField] private Sprite[] carImages;
     private int carIndex;
     [SerializeField] GameObject GameSettingScene;
+    [SerializeField] private TextMeshProUGUI moneyText;
+    private int moneyIndex;
     // Start is called before the first frame update
     void Start()
     {
         carIndex = 0;
+        moneyIndex = PlayerPrefs.GetInt("Money");
+        moneyText.text = ""+moneyIndex;
+
     }
 
     // Update is called once per frame
@@ -49,6 +55,7 @@ public class Garage : MonoBehaviour
     {
         SceneManager.LoadScene(1);
         Time.timeScale = 1.0f;
+        AudioManager.instance.Stop("Home");
     }
 
     public void GameHome()
