@@ -26,6 +26,7 @@ public class CarController : MonoBehaviour
     [SerializeField] private SpriteRenderer carSelection;
     [SerializeField] private Sprite[] carImages;
     private int currCar;
+    [SerializeField]private int currControls;
     // Start is called before the first frame update
     void Start()
     {
@@ -33,12 +34,13 @@ public class CarController : MonoBehaviour
         setHealth(currHealth);
         currCar = PlayerPrefs.GetInt("MainCar");
         carSelection.sprite = carImages[currCar];
+        AudioManager.instance.Play("Car");
     }
 
     // Update is called once per frame
     void Update()
     {
-        MoveOnKeys();
+        DetectInput();
 
         if(goingLeft)
         {
@@ -58,6 +60,17 @@ public class CarController : MonoBehaviour
         money = (int)(score / 5);
         PlayerPrefs.SetInt("Money", money);
       
+    }
+    private void DetectInput()
+    {
+        switch (currControls)
+        {
+            case 1:
+                {
+                    MoveOnKeys();
+                    break;
+                }
+        }
     }
     private void LeftSide()
     {
@@ -128,6 +141,7 @@ public class CarController : MonoBehaviour
         scoreText.text = "Score :" + score;
         moneyText.text = "Money :" + money;
         AudioManager.instance.Play("Game Over");
+        AudioManager.instance.Stop("Car");
     }
     public void GamePause()
     {
@@ -157,5 +171,21 @@ public class CarController : MonoBehaviour
     public void GameQuit()
     {
         Application.Quit();
+    }
+    public void RightBtnDown()
+    {
+        goingRight=true;
+    }
+    public void RightBtnUp()
+    {
+        goingRight = false;
+    }
+    public void LeftBtnDown()
+    {
+        goingLeft = true;
+    }
+    public void LeftBtnUp()
+    {
+        goingLeft = false;
     }
 }

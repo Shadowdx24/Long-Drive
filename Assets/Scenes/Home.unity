@@ -1152,21 +1152,21 @@ MonoBehaviour:
     loop: 1
     audioSource: {fileID: 0}
   - Name: Car
-    clip: {fileID: 8300000, guid: 7f476f3fc3c7048459f23f50edada70c, type: 3}
+    clip: {fileID: 8300000, guid: 5244ed743664cb54fbc1b1f37dc51704, type: 3}
     volume: 1
     pitch: 1
-    loop: 0
+    loop: 1
     audioSource: {fileID: 0}
   - Name: Crash
     clip: {fileID: 8300000, guid: f434d022f15f9f346bd0abcbddff5b16, type: 3}
     volume: 1
-    pitch: 1
+    pitch: 1.5
     loop: 0
     audioSource: {fileID: 0}
   - Name: Fuel
     clip: {fileID: 8300000, guid: 56d096bfeebb70243b8551be76ff6adf, type: 3}
     volume: 1
-    pitch: 1
+    pitch: 1.5
     loop: 0
     audioSource: {fileID: 0}
   - Name: Game Over
