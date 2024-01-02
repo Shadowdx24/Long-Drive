@@ -7,7 +7,7 @@ public class AudioManager : MonoBehaviour
 {
     public Sound[] sounds;
     public static AudioManager instance;
-
+    public bool isMuted=false; 
     private void Awake()
     {
         if (instance == null)
@@ -62,4 +62,10 @@ public class AudioManager : MonoBehaviour
     {
         
     }
+    public void ToggleMusic()
+    {
+        isMuted= !isMuted;
+        AudioListener.pause = isMuted;
+    }
+
 }
