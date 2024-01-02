@@ -19,4 +19,8 @@ public class Road : MonoBehaviour
         offset=new Vector2(0,Time.time*speed);
         road.material.mainTextureOffset = offset;
     }
+    public void setSpeed(float s)
+    {
+        speed = s;
+    }
 }

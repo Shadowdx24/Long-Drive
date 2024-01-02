@@ -6,6 +6,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
+
 public class CarController : MonoBehaviour
 {
     [SerializeField] private float speed = 1.0f;
@@ -26,13 +27,28 @@ public class CarController : MonoBehaviour
     [SerializeField] private SpriteRenderer carSelection;
     [SerializeField] private Sprite[] carImages;
     private int currCar;
-    [SerializeField]private int currControls;
+    private int currControls;
+    [SerializeField] private Button BtnLeft;
+    [SerializeField] private Button BtnRight;
+    private float CurrCarSpeed=0.5f;
+    [SerializeField] private Road CarRoad;
     // Start is called before the first frame update
     void Start()
     {
         currHealth = maxHealth;
         setHealth(currHealth);
         currCar = PlayerPrefs.GetInt("MainCar");
+        currControls = PlayerPrefs.GetInt("CurrControls");
+        if(currControls == 2)
+        {
+            BtnLeft.gameObject.SetActive(true);
+            BtnRight.gameObject.SetActive(true);
+        }
+        else
+        {
+            BtnLeft.gameObject.SetActive(false);
+            BtnRight.gameObject.SetActive(false);
+        }
         carSelection.sprite = carImages[currCar];
         AudioManager.instance.Play("Car");
     }
@@ -70,6 +86,15 @@ public class CarController : MonoBehaviour
                     MoveOnKeys();
                     break;
                 }
+            case 2:
+                {
+                    break;       
+                }
+            case 3:
+                {
+                    MoveOnSensor();
+                    break;
+                }
         }
     }
     private void LeftSide()
@@ -96,6 +121,22 @@ public class CarController : MonoBehaviour
         {
             goingLeft=false;
             goingRight=false;
+        }
+    }
+    private void MoveOnSensor()
+    {
+        if (Input.acceleration.x < -0.1f)
+        {
+            goingLeft = true;
+        }
+        else if (Input.acceleration.x > 0.1f)
+        {
+            goingRight = true;
+        }
+        else
+        {
+            goingLeft = false;
+            goingRight = false;
         }
     }
     private void resetRotation()
@@ -188,5 +229,15 @@ public class CarController : MonoBehaviour
     public void LeftBtnUp()
     {
         goingLeft = false;
+    }
+    public void Accelerate()
+    {
+        CurrCarSpeed += 0.1f;
+        CarRoad.setSpeed(CurrCarSpeed);
+    }
+    public void Decelerate()
+    {
+        CurrCarSpeed -= 0.1f;
+        CarRoad.setSpeed(CurrCarSpeed);
     }
 }
