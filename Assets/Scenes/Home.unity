@@ -1153,7 +1153,7 @@ MonoBehaviour:
     audioSource: {fileID: 0}
   - Name: Car
     clip: {fileID: 8300000, guid: 5244ed743664cb54fbc1b1f37dc51704, type: 3}
-    volume: 1
+    volume: 0.5
     pitch: 1
     loop: 1
     audioSource: {fileID: 0}
@@ -1177,6 +1177,12 @@ MonoBehaviour:
     audioSource: {fileID: 0}
   - Name: BtnClick
     clip: {fileID: 8300000, guid: 17c72506efabd184cb7349aa4bff7be5, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    audioSource: {fileID: 0}
+  - Name: CarBg
+    clip: {fileID: 8300000, guid: d5e55e730b1024d439b0c0418e4fcf03, type: 3}
     volume: 1
     pitch: 1
     loop: 0

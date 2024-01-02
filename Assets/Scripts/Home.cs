@@ -24,6 +24,7 @@ public class Home : MonoBehaviour
         SceneManager.LoadScene(1);
         Time.timeScale = 1.0f;
         AudioManager.instance.Stop("Home");
+        AudioManager.instance.Play("CarBg");
     }
     public void CarGarage()
     {
