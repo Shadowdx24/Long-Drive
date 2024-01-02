@@ -57,7 +57,6 @@ public class Garage : MonoBehaviour
         Time.timeScale = 1.0f;
         AudioManager.instance.Stop("Home");
         AudioManager.instance.Play("CarBg");
-
     }
 
     public void GameHome()
