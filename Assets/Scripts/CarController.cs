@@ -142,6 +142,7 @@ public class CarController : MonoBehaviour
         moneyText.text = "Money :" + money;
         AudioManager.instance.Play("Game Over");
         AudioManager.instance.Stop("Car");
+        AudioManager.instance.Stop("CarBg");
     }
     public void GamePause()
     {
@@ -161,7 +162,7 @@ public class CarController : MonoBehaviour
         score = 0;
         money = 0;
         AudioManager.instance.Stop("Game Over");
-
+        AudioManager.instance.Play("CarBg");
     }
     public void GameHome()
     {
