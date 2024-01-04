@@ -1,6 +1,4 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class AudioManager : MonoBehaviour
@@ -8,6 +6,7 @@ public class AudioManager : MonoBehaviour
     public Sound[] sounds;
     public static AudioManager instance;
     public bool isMuted=false; 
+
     private void Awake()
     {
         if (instance == null)
@@ -30,7 +29,7 @@ public class AudioManager : MonoBehaviour
             sound.audioSource.pitch=sound.pitch;
         }
     }
-    // Start is called before the first frame update
+    
     void Start()
     {
         Play("Home");
@@ -44,8 +43,8 @@ public class AudioManager : MonoBehaviour
             return;
         }
         s.audioSource.Play();
-
     }
+
     public void Stop(string audioName)
     {
         Sound s = Array.Find(sounds, sound => sound.Name == audioName);
@@ -54,18 +53,11 @@ public class AudioManager : MonoBehaviour
             return;
         }
         s.audioSource.Stop();
-
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    
     public void ToggleMusic()
     {
         isMuted= !isMuted;
         AudioListener.pause = isMuted;
     }
-
 }

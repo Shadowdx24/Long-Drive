@@ -1,11 +1,7 @@
-using System.Collections;
-using System.Collections.Generic;
 using TMPro;
-using UnityEditor.SearchService;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
-
 
 public class CarController : MonoBehaviour
 {
@@ -32,7 +28,7 @@ public class CarController : MonoBehaviour
     [SerializeField] private Button BtnRight;
     private float CurrCarSpeed=0.5f;
     [SerializeField] private Road CarRoad;
-    // Start is called before the first frame update
+    
     void Start()
     {
         currHealth = maxHealth;
@@ -53,7 +49,6 @@ public class CarController : MonoBehaviour
         AudioManager.instance.Play("Car");
     }
 
-    // Update is called once per frame
     void Update()
     {
         DetectInput();
@@ -74,9 +69,9 @@ public class CarController : MonoBehaviour
         score = (int)gameTime;
         Debug.Log(score);
         money = (int)(score / 5);
-        PlayerPrefs.SetInt("Money", money);
-      
+        PlayerPrefs.SetInt("Money", money);     
     }
+
     private void DetectInput()
     {
         switch (currControls)
@@ -95,18 +90,26 @@ public class CarController : MonoBehaviour
                     MoveOnSensor();
                     break;
                 }
+            case 4:
+                {
+                    MoveOnTouch();
+                    break;
+                }
         }
     }
+
     private void LeftSide()
     {
         transform.position -= new Vector3(speed*Time.deltaTime, 0, 0);
         transform.rotation = Quaternion.Lerp(transform.rotation,Quaternion.Euler(0,0,rotationAngle),rotationSpeed*Time.deltaTime);
     }
+
     private void RightSide()
     {
         transform.position += new Vector3(speed * Time.deltaTime, 0, 0);
         transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.Euler(0, 0,-rotationAngle), rotationSpeed * Time.deltaTime);
     }
+
     private void MoveOnKeys()
     {
         if (Input.GetKey(KeyCode.A))
@@ -135,6 +138,27 @@ public class CarController : MonoBehaviour
         }
         else
         {
+            goingLeft = false;
+            goingRight = false;
+        }
+    }
+    private void MoveOnTouch()
+    {
+        if(Input.touchCount > 0)
+        {
+            Vector2 pos=Input.GetTouch(0).position;
+            float middle = Screen.width / 2;
+            if(pos.x < middle)
+            {
+                goingLeft=true;
+            }
+            else if(pos.x > middle)
+            {
+                goingRight=true;
+            }
+        }
+        else 
+        { 
             goingLeft = false;
             goingRight = false;
         }
@@ -175,6 +199,7 @@ public class CarController : MonoBehaviour
     {
         healthSlider.value = val;
     }
+
     private void GameOver()
     {
         GameOverScene.SetActive(true);
@@ -185,6 +210,7 @@ public class CarController : MonoBehaviour
         AudioManager.instance.Stop("Car");
         AudioManager.instance.Stop("CarBg");
     }
+
     public void GamePause()
     {
         GamePauseScene.SetActive(true);
@@ -209,15 +235,18 @@ public class CarController : MonoBehaviour
         AudioManager.instance.Stop("Game Over");
         AudioManager.instance.Play("CarBg");
     }
+    
     public void GameHome()
     {
         SceneManager.LoadScene(0);
         AudioManager.instance.Play("Home");
     }
+    
     public void GameQuit()
     {
         Application.Quit();
     }
+    
     public void RightBtnDown()
     {
         goingRight=true;

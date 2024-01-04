@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -13,30 +11,26 @@ public class Garage : MonoBehaviour
     [SerializeField] GameObject GameSettingScene;
     [SerializeField] private TextMeshProUGUI moneyText;
     private int moneyIndex;
-    // Start is called before the first frame update
+    
     void Start()
     {
         carIndex = 0;
         moneyIndex = PlayerPrefs.GetInt("Money");
         moneyText.text = ""+moneyIndex;
-
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    
     public void NextCar()
     {
         carIndex++;
         ShowCar(carIndex);
     }
+
     public void PrevCar()
     {
         carIndex--;
         ShowCar(carIndex);
     }
+
     private void ShowCar(int carNumber)
     {
         if(carNumber >= carImages.Length-1)
@@ -51,6 +45,7 @@ public class Garage : MonoBehaviour
         carSelection.sprite = carImages[carIndex];
         PlayerPrefs.SetInt("MainCar",carIndex);
     }
+
     public void GameStart()
     {
         SceneManager.LoadScene(1);
@@ -64,6 +59,7 @@ public class Garage : MonoBehaviour
         SceneManager.LoadScene(0);
         //Time.timeScale = 1.0f;
     }
+
     public void GameSetting()
     {
         GameSettingScene.SetActive(true);
