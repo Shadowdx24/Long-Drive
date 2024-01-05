@@ -216,7 +216,7 @@ public class CarController : MonoBehaviour
         GamePauseScene.SetActive(true);
         Time.timeScale = 0f;
         AudioManager.instance.Stop("Car");
-        AudioManager.instance.Stop("CarBg");
+        AudioManager.instance.Stop("CarBg");   
     }
     public void Resume()
     {
