@@ -2024,7 +2024,7 @@ RectTransform:
   m_GameObject: {fileID: 937204570}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 3, y: 3, z: 3}
+  m_LocalScale: {x: 2.6, y: 2.6, z: 2.6}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 149003730}
@@ -4457,6 +4457,10 @@ PrefabInstance:
       propertyPath: healthSlider
       value: 
       objectReference: {fileID: 769687131}
+    - target: {fileID: 5104376174769935436, guid: b874f00f498a88945983dc88fed2459a, type: 3}
+      propertyPath: ControlsScene
+      value: 
+      objectReference: {fileID: 937204570}
     - target: {fileID: 5104376174769935436, guid: b874f00f498a88945983dc88fed2459a, type: 3}
       propertyPath: GameOverScene
       value: 

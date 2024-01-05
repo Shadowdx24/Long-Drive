@@ -30,8 +30,8 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: -2, z: 0}
-  m_LocalScale: {x: 0.25, y: 0.25, z: 0.25}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 0.21, y: 0.21, z: 0.21}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -178,6 +178,7 @@ MonoBehaviour:
   healthSlider: {fileID: 0}
   GameOverScene: {fileID: 0}
   GamePauseScene: {fileID: 0}
+  ControlsScene: {fileID: 0}
   scoreText: {fileID: 0}
   moneyText: {fileID: 0}
   carSelection: {fileID: 5359333552695503723}
@@ -188,3 +189,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: b0318d0db12914b9e9cc242036a8929d, type: 3}
   - {fileID: 21300000, guid: 292fed72a8cc44f5c9e2d39f013fae39, type: 3}
   - {fileID: 21300000, guid: ce8c651e3a7494bb7b27f580c7c98fad, type: 3}
+  BtnLeft: {fileID: 0}
+  BtnRight: {fileID: 0}
+  BtnPause: {fileID: 0}
+  CarRoad: {fileID: 0}

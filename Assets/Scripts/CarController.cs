@@ -18,6 +18,7 @@ public class CarController : MonoBehaviour
     private float gameTime = 0f;
     [SerializeField] GameObject GameOverScene;
     [SerializeField] GameObject GamePauseScene;
+    [SerializeField] GameObject ControlsScene;
     [SerializeField] TextMeshProUGUI scoreText;
     [SerializeField] TextMeshProUGUI moneyText;
     [SerializeField] private SpriteRenderer carSelection;
@@ -26,6 +27,7 @@ public class CarController : MonoBehaviour
     private int currControls;
     [SerializeField] private Button BtnLeft;
     [SerializeField] private Button BtnRight;
+    [SerializeField] private Button BtnPause;
     private float CurrCarSpeed=0.5f;
     [SerializeField] private Road CarRoad;
     
@@ -40,10 +42,15 @@ public class CarController : MonoBehaviour
             BtnLeft.gameObject.SetActive(true);
             BtnRight.gameObject.SetActive(true);
         }
+        else if (currControls == 1)
+        {
+            ControlsScene.SetActive(false);
+        }
         else
         {
             BtnLeft.gameObject.SetActive(false);
             BtnRight.gameObject.SetActive(false);
+            ControlsScene.SetActive(true);
         }
         carSelection.sprite = carImages[currCar];
         AudioManager.instance.Play("Car");
@@ -61,7 +68,7 @@ public class CarController : MonoBehaviour
         {
             RightSide();
         }
-        else
+       else
         {
             resetRotation();
         }
@@ -119,6 +126,14 @@ public class CarController : MonoBehaviour
        else if (Input.GetKey(KeyCode.D))
         {
            goingRight = true;
+        }
+       else if (Input.GetKeyDown(KeyCode.W))
+        {
+            Accelerate();
+        }
+        else if (Input.GetKeyDown(KeyCode.S))
+        {
+            Decelerate();
         }
         else
         {
@@ -209,6 +224,8 @@ public class CarController : MonoBehaviour
         AudioManager.instance.Play("Game Over");
         AudioManager.instance.Stop("Car");
         AudioManager.instance.Stop("CarBg");
+        BtnPause.gameObject.SetActive(false);
+        ControlsScene.SetActive(false);
     }
 
     public void GamePause()
@@ -217,6 +234,8 @@ public class CarController : MonoBehaviour
         Time.timeScale = 0f;
         AudioManager.instance.Stop("Car");
         AudioManager.instance.Stop("CarBg");   
+        BtnPause.gameObject.SetActive(false);
+        ControlsScene.SetActive(false);
     }
     public void Resume()
     {
@@ -224,6 +243,8 @@ public class CarController : MonoBehaviour
         GamePauseScene.SetActive(false);
         AudioManager.instance.Play("Car");
         AudioManager.instance.Play("CarBg");
+        BtnPause.gameObject.SetActive(true);
+        ControlsScene.SetActive(true);
     }
     public void Restart()
     {
@@ -265,6 +286,7 @@ public class CarController : MonoBehaviour
     }
     public void Accelerate()
     {
+        
         CurrCarSpeed += 0.1f;
         CarRoad.setSpeed(CurrCarSpeed);
     }
