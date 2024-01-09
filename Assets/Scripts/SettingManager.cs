@@ -1,6 +1,6 @@
 using UnityEngine;
-using EasyUI.Toast;
 using UnityEngine.UI;
+using EasyUI.Toast;
 
 public class SettingManager : MonoBehaviour
 {
