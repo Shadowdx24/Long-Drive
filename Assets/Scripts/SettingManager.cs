@@ -21,28 +21,28 @@ public class SettingManager : MonoBehaviour
     {
         controls = 1;
         PlayerPrefs.SetInt("CurrControls",controls);
-        Toast.Show("<color=black>Enable Keys</color>", 3f, ToastColor.Yellow, ToastPosition.BottomCenter);
+        Toast.Show("<color=white>Enable Keys</color>", 3f, ToastColor.Purple, ToastPosition.BottomCenter);
     }
 
     public void BtnButton()
     {
         controls = 2;
         PlayerPrefs.SetInt("CurrControls", controls);
-        Toast.Show("<color=black>Enable Button</color>", 3f, ToastColor.Yellow, ToastPosition.BottomCenter);
+        Toast.Show("<color=white>Enable Button</color>", 3f, ToastColor.Purple, ToastPosition.BottomCenter);
     }
 
     public void BtnSensor()
     {
         controls = 3;
         PlayerPrefs.SetInt("CurrControls", controls);
-        Toast.Show("<color=black>Enable Sensor</color>", 3f, ToastColor.Yellow, ToastPosition.BottomCenter);
+        Toast.Show("<color=white>Enable Sensor</color>", 3f, ToastColor.Purple, ToastPosition.BottomCenter);
     }
 
     public void BtnTouch()
     {
         controls = 4;
         PlayerPrefs.SetInt("CurrControls", controls);
-        Toast.Show("<color=black>Enable Touch</color>", 3f, ToastColor.Yellow, ToastPosition.BottomCenter);
+        Toast.Show("<color=white>Enable Touch</color>", 3f, ToastColor.Purple, ToastPosition.BottomCenter);
     }
 
     public void MusicBtn()
