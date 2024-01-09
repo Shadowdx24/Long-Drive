@@ -38,26 +38,31 @@ public class AudioManager : MonoBehaviour
     public void Play(string audioName) 
     {
         Sound s = Array.Find(sounds,sound=>sound.Name==audioName);
+
         if (s==null)
         {
             return;
         }
+
         s.audioSource.Play();
     }
 
     public void Stop(string audioName)
     {
         Sound s = Array.Find(sounds, sound => sound.Name == audioName);
+
         if (s == null)
         {
             return;
         }
+
         s.audioSource.Stop();
     }
     
     public void ToggleMusic()
     {
         isMuted= !isMuted;
+        PlayerPrefs.SetInt("Muted", isMuted ? 1 : 0);
         AudioListener.pause = isMuted;
     }
 }
