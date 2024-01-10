@@ -3,7 +3,7 @@ using UnityEngine.SceneManagement;
 
 public class Home : MonoBehaviour
 {
-    [SerializeField] GameObject GameSettingScene;
+    [SerializeField] private GameObject settingsObj;
     
     public void GameStart()
     {
@@ -25,11 +25,11 @@ public class Home : MonoBehaviour
 
     public void GameSetting()
     {
-        GameSettingScene.SetActive(true);
+        settingsObj.SetActive(true);
     }
 
     public void GameHome()
     {
-        GameSettingScene.SetActive(false);
+        settingsObj.SetActive(false);
     }
 }

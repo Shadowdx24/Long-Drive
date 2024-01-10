@@ -3,7 +3,7 @@ using UnityEngine;
 public class Road : MonoBehaviour
 {
     [SerializeField] private Renderer road;
-    [SerializeField] public float speed=0.1f;
+    [SerializeField] private float speed = 0.1f;
     private Vector2 offset;
     
     void Update()
@@ -12,7 +12,7 @@ public class Road : MonoBehaviour
         road.material.mainTextureOffset = offset;
     }
 
-    public void setSpeed(float s)
+    public void SetSpeed(float s)
     {
         speed = s;
     }

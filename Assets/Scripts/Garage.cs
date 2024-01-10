@@ -7,9 +7,9 @@ public class Garage : MonoBehaviour
 {
     [SerializeField] private Image carSelection;
     [SerializeField] private Sprite[] carImages;
-    private int carIndex;
-    [SerializeField] GameObject GameSettingScene;
+    [SerializeField] private GameObject GameSettingScene;
     [SerializeField] private TextMeshProUGUI moneyText;
+    private int carIndex;
     private int moneyIndex;
     
     void Start()
@@ -41,6 +41,7 @@ public class Garage : MonoBehaviour
         {
             carNumber =carImages.Length-1;
         }
+
         carIndex = carNumber;
         carSelection.sprite = carImages[carIndex];
         PlayerPrefs.SetInt("MainCar",carIndex);

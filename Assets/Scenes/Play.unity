@@ -3726,6 +3726,7 @@ MonoBehaviour:
   - {fileID: 2521677297650252562, guid: ec0e05e4a1aa8b541bb049be70b4461b, type: 3}
   - {fileID: 7257728305490184927, guid: a464db29cd12fd740a7f15df1e0973e4, type: 3}
   - {fileID: 1458431721569602259, guid: 0c0fa2f795d719f499bc4133c98c238b, type: 3}
+  speed: 0.5
 --- !u!1 &1818352295
 GameObject:
   m_ObjectHideFlags: 0
@@ -4446,6 +4447,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1328416132}
     - target: {fileID: 5104376174769935436, guid: b874f00f498a88945983dc88fed2459a, type: 3}
+      propertyPath: pauseObj
+      value: 
+      objectReference: {fileID: 1818352295}
+    - target: {fileID: 5104376174769935436, guid: b874f00f498a88945983dc88fed2459a, type: 3}
       propertyPath: moneyText
       value: 
       objectReference: {fileID: 986867926}
@@ -4453,6 +4458,14 @@ PrefabInstance:
       propertyPath: scoreText
       value: 
       objectReference: {fileID: 563562303}
+    - target: {fileID: 5104376174769935436, guid: b874f00f498a88945983dc88fed2459a, type: 3}
+      propertyPath: controlsObj
+      value: 
+      objectReference: {fileID: 937204570}
+    - target: {fileID: 5104376174769935436, guid: b874f00f498a88945983dc88fed2459a, type: 3}
+      propertyPath: gameOverObj
+      value: 
+      objectReference: {fileID: 18590372}
     - target: {fileID: 5104376174769935436, guid: b874f00f498a88945983dc88fed2459a, type: 3}
       propertyPath: healthSlider
       value: 
@@ -4469,6 +4482,10 @@ PrefabInstance:
       propertyPath: GamePauseScene
       value: 
       objectReference: {fileID: 1818352295}
+    - target: {fileID: 5104376174769935436, guid: b874f00f498a88945983dc88fed2459a, type: 3}
+      propertyPath: objectGenerator
+      value: 
+      objectReference: {fileID: 1762003482}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

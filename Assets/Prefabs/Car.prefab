@@ -176,9 +176,9 @@ MonoBehaviour:
   rotationAngle: 30
   maxHealth: 10
   healthSlider: {fileID: 0}
-  GameOverScene: {fileID: 0}
-  GamePauseScene: {fileID: 0}
-  ControlsScene: {fileID: 0}
+  gameOverObj: {fileID: 0}
+  pauseObj: {fileID: 0}
+  controlsObj: {fileID: 0}
   scoreText: {fileID: 0}
   moneyText: {fileID: 0}
   carSelection: {fileID: 5359333552695503723}
@@ -193,3 +193,4 @@ MonoBehaviour:
   BtnRight: {fileID: 0}
   BtnPause: {fileID: 0}
   CarRoad: {fileID: 0}
+  objectGenerator: {fileID: 0}
