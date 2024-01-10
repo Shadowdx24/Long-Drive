@@ -142,6 +142,22 @@ public class CarController : MonoBehaviour
         {
             Decelerate();
         }
+        else if (Input.GetKey(KeyCode.LeftArrow))
+        {
+            goingLeft = true;
+        }
+        else if (Input.GetKey(KeyCode.RightArrow))
+        {
+            goingRight = true;
+        }
+        else if (Input.GetKeyDown(KeyCode.UpArrow))
+        {
+            Accelerate();
+        }
+        else if (Input.GetKeyDown(KeyCode.DownArrow))
+        {
+            Decelerate();
+        }
         else
         {
             goingLeft=false;
