@@ -271,7 +271,15 @@ public class CarController : MonoBehaviour
         AudioManager.instance.Play("Car");
         AudioManager.instance.Play("CarBg");
         BtnPause.gameObject.SetActive(true);
-        controlsObj.SetActive(true);
+        
+        if (currControls == 1)
+        {
+            controlsObj.SetActive(false);
+        }
+        else
+        { 
+            controlsObj.SetActive(true);
+        }
     }
 
     public void Restart()
@@ -289,6 +297,7 @@ public class CarController : MonoBehaviour
     {
         SceneManager.LoadScene(0);
         AudioManager.instance.Play("Home");
+        Time.timeScale = 1.0f;
     }
     
     public void GameQuit()

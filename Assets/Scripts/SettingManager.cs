@@ -13,33 +13,33 @@ public class SettingManager : MonoBehaviour
     {
         UpdateSoundUI();
     }
-
+    
     public void BtnKeys()
     {
         controls = 1;
         PlayerPrefs.SetInt("CurrControls",controls);
-        Toast.Show("<color=white>Enable Keys</color>", 3f, ToastColor.Purple);
+        Toast.Show("<color=white>Enable Keys</color>",3f,ToastColor.Purple);
     }
 
     public void BtnButton()
     {
         controls = 2;
         PlayerPrefs.SetInt("CurrControls", controls);
-        Toast.Show("<color=white>Enable Button</color>", 3f, ToastColor.Purple);
+        Toast.Show("<color=white>Enable Button</color>",3f, ToastColor.Purple);
     }
 
     public void BtnSensor()
     {
         controls = 3;
         PlayerPrefs.SetInt("CurrControls", controls);
-        Toast.Show("<color=white>Enable Sensor</color>", 3f, ToastColor.Purple);
+        Toast.Show("<color=white>Enable Sensor</color>",3f, ToastColor.Purple);
     }
 
     public void BtnTouch()
     {
         controls = 4;
         PlayerPrefs.SetInt("CurrControls", controls);
-        Toast.Show("<color=white>Enable Touch</color>", 3f, ToastColor.Purple);
+        Toast.Show("<color=white>Enable Touch</color>",3f, ToastColor.Purple);
     }
 
     public void MusicBtn()
