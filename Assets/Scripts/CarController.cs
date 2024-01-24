@@ -15,12 +15,14 @@ public class CarController : MonoBehaviour
     [SerializeField] private float maxHealth = 10;
     [SerializeField] private Slider healthSlider;
     private int score = 0;
+    private int highScore = 0;
     private int money = 0;
     private float gameTime = 0f;
     [SerializeField] private GameObject gameOverObj;
     [SerializeField] private GameObject pauseObj;
     [SerializeField] private GameObject controlsObj;
     [SerializeField] private TextMeshProUGUI scoreText;
+    [SerializeField] private TextMeshProUGUI highScoreText;
     [SerializeField] private TextMeshProUGUI moneyText;
     [SerializeField] private SpriteRenderer carSelection;
     [SerializeField] private Sprite[] carImages;
@@ -34,6 +36,8 @@ public class CarController : MonoBehaviour
     
     void Start()
     {
+        score = PlayerPrefs.GetInt("Score");
+        highScore = PlayerPrefs.GetInt("HighScore");
         currHealth = maxHealth;
         setHealth(currHealth);
         currCar = PlayerPrefs.GetInt("MainCar");
@@ -79,11 +83,21 @@ public class CarController : MonoBehaviour
             resetRotation();
         }
 
-        gameTime = Time.time;
+        gameTime += Time.deltaTime;
         score = (int)gameTime;
+        // CheckHighScore();
         Debug.Log(score);
         money = (int)(score / 5);
-        PlayerPrefs.SetInt("Money", money);     
+        PlayerPrefs.SetInt("Money", money);
+    }
+
+    private void CheckHighScore()
+    {
+        if (highScore < score)
+        {
+            highScore = score;
+            PlayerPrefs.SetInt("HighScore", highScore);
+        }
     }
 
     private void DetectInput()
@@ -246,6 +260,11 @@ public class CarController : MonoBehaviour
         gameOverObj.SetActive(true);
         Time.timeScale = 0f;
         scoreText.text = "Score :" + score;
+
+        CheckHighScore();
+
+        highScoreText.text = "HighScore :" + highScore;
+
         moneyText.text = "Money :" + money;
         AudioManager.instance.Play("Game Over");
         AudioManager.instance.Stop("Car");
@@ -289,6 +308,7 @@ public class CarController : MonoBehaviour
         gameOverObj.SetActive(false);
         score = 0;
         money = 0;
+        //PlayerPrefs.SetInt("Score", score);
         AudioManager.instance.Stop("Game Over");
         AudioManager.instance.Play("CarBg");
     }
