@@ -308,7 +308,7 @@ public class CarController : MonoBehaviour
         gameOverObj.SetActive(false);
         score = 0;
         money = 0;
-        //PlayerPrefs.SetInt("Score", score);
+        PlayerPrefs.SetInt("Score", score);
         AudioManager.instance.Stop("Game Over");
         AudioManager.instance.Play("CarBg");
     }
