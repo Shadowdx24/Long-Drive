@@ -6,6 +6,7 @@ TagManager:
   tags:
   - enemy
   - fuel
+  - bumper
   layers:
   - Default
   - TransparentFX

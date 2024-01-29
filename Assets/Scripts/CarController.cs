@@ -249,6 +249,15 @@ public class CarController : MonoBehaviour
             Destroy(collision.gameObject);
             AudioManager.instance.Play("Fuel");
         }
+        else if (collision.gameObject.CompareTag("bumper"))
+        {
+            score -= 5;
+            Debug.Log(score);
+            currHealth--;
+            setHealth(currHealth);
+            Destroy(collision.gameObject);
+            AudioManager.instance.Play("Crash");
+        }
     }
     private void setHealth(float val)
     {
