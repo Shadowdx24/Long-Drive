@@ -1158,7 +1158,7 @@ MonoBehaviour:
   - Name: BtnClick
     clip: {fileID: 8300000, guid: 17c72506efabd184cb7349aa4bff7be5, type: 3}
     volume: 1
-    pitch: 1
+    pitch: 2
     loop: 0
     audioSource: {fileID: 0}
   - Name: CarBg
