@@ -284,6 +284,7 @@ public class CarController : MonoBehaviour
 
     public void GamePause()
     {
+        AudioManager.instance.Play("BtnClick");
         pauseObj.SetActive(true);
         Time.timeScale = 0f;
         AudioManager.instance.Stop("Car");
@@ -294,6 +295,7 @@ public class CarController : MonoBehaviour
 
     public void Resume()
     {
+        AudioManager.instance.Play("BtnClick");
         Time.timeScale = 1.0f;
         pauseObj.SetActive(false);
         AudioManager.instance.Play("Car");
@@ -312,6 +314,7 @@ public class CarController : MonoBehaviour
 
     public void Restart()
     {
+        AudioManager.instance.Play("BtnClick");
         SceneManager.LoadScene(1);
         Time.timeScale = 1.0f;
         gameOverObj.SetActive(false);
@@ -324,6 +327,7 @@ public class CarController : MonoBehaviour
     
     public void GameHome()
     {
+        AudioManager.instance.Play("BtnClick");
         SceneManager.LoadScene(0);
         AudioManager.instance.Play("Home");
         Time.timeScale = 1.0f;
@@ -331,6 +335,7 @@ public class CarController : MonoBehaviour
     
     public void GameQuit()
     {
+        AudioManager.instance.Play("BtnClick");
         Application.Quit();
     }
     

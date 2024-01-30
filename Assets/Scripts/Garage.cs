@@ -21,12 +21,14 @@ public class Garage : MonoBehaviour
     
     public void NextCar()
     {
+        AudioManager.instance.Play("BtnClick");
         carIndex++;
         ShowCar(carIndex);
     }
 
     public void PrevCar()
     {
+        AudioManager.instance.Play("BtnClick");
         carIndex--;
         ShowCar(carIndex);
     }
@@ -49,6 +51,7 @@ public class Garage : MonoBehaviour
 
     public void GameStart()
     {
+        AudioManager.instance.Play("BtnClick");
         SceneManager.LoadScene(1);
         Time.timeScale = 1.0f;
         AudioManager.instance.Stop("Home");
@@ -57,12 +60,14 @@ public class Garage : MonoBehaviour
 
     public void GameHome()
     {
+        AudioManager.instance.Play("BtnClick");
         SceneManager.LoadScene(0);
-        //Time.timeScale = 1.0f;
+        Time.timeScale = 1.0f;
     }
 
     public void GameSetting()
     {
+        AudioManager.instance.Play("BtnClick");
         GameSettingScene.SetActive(true);
     }
 }

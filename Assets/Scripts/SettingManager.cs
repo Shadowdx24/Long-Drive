@@ -16,6 +16,7 @@ public class SettingManager : MonoBehaviour
     
     public void BtnKeys()
     {
+        AudioManager.instance.Play("BtnClick");
         controls = 1;
         PlayerPrefs.SetInt("CurrControls",controls);
         Toast.Show("<color=white>Enable Keys</color>",3f,ToastColor.Blue);
@@ -23,6 +24,7 @@ public class SettingManager : MonoBehaviour
 
     public void BtnButton()
     {
+        AudioManager.instance.Play("BtnClick");
         controls = 2;
         PlayerPrefs.SetInt("CurrControls", controls);
         Toast.Show("<color=white>Enable Button</color>",3f, ToastColor.Blue);
@@ -30,6 +32,7 @@ public class SettingManager : MonoBehaviour
 
     public void BtnSensor()
     {
+        AudioManager.instance.Play("BtnClick");
         controls = 3;
         PlayerPrefs.SetInt("CurrControls", controls);
         Toast.Show("<color=white>Enable Sensor</color>",3f, ToastColor.Blue);
@@ -44,6 +47,7 @@ public class SettingManager : MonoBehaviour
 
     public void MusicBtn()
     {
+        AudioManager.instance.Play("BtnClick");
         AudioManager.instance.ToggleMusic();
         UpdateSoundUI();
     }
