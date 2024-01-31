@@ -20,6 +20,12 @@ public class Home : MonoBehaviour
         SceneManager.LoadScene(2);
     }
 
+    public void RoadGarage()
+    {
+        AudioManager.instance.Play("BtnClick");
+        SceneManager.LoadScene(3);
+    }
+
     public void GameQuit()
     {
         AudioManager.instance.Play("BtnClick");

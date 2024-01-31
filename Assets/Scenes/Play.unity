@@ -1495,6 +1495,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   road: {fileID: 670233153}
   speed: 0.5
+  roadImages:
+  - {fileID: 2100000, guid: d72f8e6bfcf1b844a93f5e58ef4b604e, type: 2}
+  - {fileID: 2100000, guid: f28833d083e87024ba26c3fda1e28ac4, type: 2}
+  - {fileID: 2100000, guid: 9afe3462467b49b4db2e53b77023fe51, type: 2}
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0

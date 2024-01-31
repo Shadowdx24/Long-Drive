@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Garage.unity
     guid: 5bc81e0d9d93e7c40a1f1f47a1a5ecd7
+  - enabled: 1
+    path: Assets/Scenes/Road Garage.unity
+    guid: 93a64c76b93c11c4b88a1d0b8b212b7f
   m_configObjects: {}

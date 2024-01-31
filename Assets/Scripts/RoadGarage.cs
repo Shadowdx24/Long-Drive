@@ -3,66 +3,66 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class Garage : MonoBehaviour
+public class RoadGarage : MonoBehaviour
 {
-    [SerializeField] private Image carSelection;
-    [SerializeField] private Sprite[] carImages;
+    [SerializeField] private Image roadSelection;
+    [SerializeField] private Sprite[] roadImages;
     [SerializeField] private GameObject settingObj;
     [SerializeField] private TextMeshProUGUI moneyText;
-    private int carIndex;
+    private int roadIndex;
     private int moneyIndex;
     
     void Start()
     {
-        carIndex = 0;
+        roadIndex = 0;
         moneyIndex = PlayerPrefs.GetInt("Money");
-        moneyText.text = ""+moneyIndex;
+        moneyText.text = "" + moneyIndex;
     }
-    
-    public void NextCar()
+
+    public void NextRoad()
     {
         AudioManager.instance.Play("BtnClick");
-        carIndex++;
-        ShowCar(carIndex);
+        roadIndex++;
+        ShowRoad(roadIndex);
     }
 
-    public void PrevCar()
+    public void PrevRoad()
     {
         AudioManager.instance.Play("BtnClick");
-        carIndex--;
-        ShowCar(carIndex);
+        roadIndex--;
+        ShowRoad(roadIndex);
     }
 
-    private void ShowCar(int carNumber)
+    private void ShowRoad(int roadNumber)
     {
-        if(carNumber >= carImages.Length-1)
+        if (roadNumber > roadImages.Length -1)
         {
-            carNumber =0;
+            roadNumber = 0;
         }
-        else if(carNumber < 0)
+        else if(roadNumber < 0)
         {
-            carNumber =carImages.Length-1;
+            roadNumber = roadImages.Length -1;
         }
 
-        carIndex = carNumber;
-        carSelection.sprite = carImages[carIndex];
-        PlayerPrefs.SetInt("MainCar",carIndex);
+        roadIndex = roadNumber;
+        roadSelection.sprite = roadImages[roadIndex];
+        PlayerPrefs.SetInt("MainRoad", roadIndex);
     }
 
     public void GameStart()
     {
         AudioManager.instance.Play("BtnClick");
-        SceneManager.LoadScene(1);
-        Time.timeScale = 1.0f;
-        AudioManager.instance.Stop("Home");
         AudioManager.instance.Play("CarBg");
+        AudioManager.instance.Stop("Home");
+        SceneManager.LoadScene(1);
+        Time.timeScale = 1f;
     }
 
     public void GameHome()
     {
         AudioManager.instance.Play("BtnClick");
         SceneManager.LoadScene(0);
-        Time.timeScale = 1.0f;
+        Time.timeScale = 1f;
     }
 
     public void GameSetting()
