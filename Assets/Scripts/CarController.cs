@@ -8,7 +8,7 @@ public class CarController : MonoBehaviour
     [SerializeField] private float speed = 1.0f;
     [SerializeField] private float rotationSpeed = 1.0f;
     [SerializeField] private float rotationAngle = 1.0f;
-    private float currCarSpeed = 0.5f;
+    [SerializeField]private float currCarSpeed = 0.5f;
     private bool goingLeft;
     private bool goingRight;
     private float currHealth;
@@ -26,6 +26,8 @@ public class CarController : MonoBehaviour
     [SerializeField] private TextMeshProUGUI moneyText;
     [SerializeField] private SpriteRenderer carSelection;
     [SerializeField] private Sprite[] carImages;
+    [SerializeField] private float maxSpeed = 2.5f;
+    [SerializeField] private float minSpeed = 0.5f;
     private int currCar;
     private int currControls;
     [SerializeField] private Button BtnLeft;
@@ -362,6 +364,8 @@ public class CarController : MonoBehaviour
     public void Accelerate()
     {
         currCarSpeed += 0.1f;
+        //currCarSpeed = Mathf.Clamp(currCarSpeed, 0.5f, 2.5f);
+        speedLimit();
         CarRoad.SetSpeed(currCarSpeed);
         objectGenerator.SetSpeed(currCarSpeed);
     }
@@ -369,7 +373,14 @@ public class CarController : MonoBehaviour
     public void Decelerate()
     {
         currCarSpeed -= 0.1f;
+        //currCarSpeed = Mathf.Clamp(currCarSpeed, 0.5f, 2.5f);
+        speedLimit();
         CarRoad.SetSpeed(currCarSpeed);
         objectGenerator.SetSpeed(currCarSpeed);
+    }
+
+    private void speedLimit()
+    {
+        currCarSpeed = Mathf.Clamp(currCarSpeed,minSpeed,maxSpeed);
     }
 }
