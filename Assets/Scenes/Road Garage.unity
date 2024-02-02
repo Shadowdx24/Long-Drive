@@ -252,7 +252,7 @@ MonoBehaviour:
   roadImages:
   - {fileID: 21300000, guid: 0081492159c3cdc478a1e041b3e3a4fa, type: 3}
   - {fileID: 21300000, guid: 8094f8f96f83e0946bbb487dc96f9afd, type: 3}
-  - {fileID: 21300000, guid: 641afec57c373f547b00fc208e3af112, type: 3}
+  - {fileID: 21300000, guid: 78c41295a750a8e4fb3a69c6b6beeb75, type: 3}
   settingObj: {fileID: 1318270021}
   moneyText: {fileID: 1282877160}
 --- !u!1 &189619811
