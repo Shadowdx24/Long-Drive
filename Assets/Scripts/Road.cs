@@ -6,8 +6,8 @@ public class Road : MonoBehaviour
     [SerializeField] private float speed = 0.1f;
     private Vector2 offset;
     [SerializeField] private Material[] roadImages;
-    private int currRoad;
-
+    public int currRoad;
+    
     void Start()
     {
         currRoad = PlayerPrefs.GetInt("MainRoad");  
@@ -17,6 +17,7 @@ public class Road : MonoBehaviour
     {
         offset=new Vector2(0,Time.time*speed);
         road.material.mainTextureOffset = offset;
+        
     }
 
     public void SetSpeed(float s)

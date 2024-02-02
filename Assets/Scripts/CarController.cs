@@ -66,6 +66,8 @@ public class CarController : MonoBehaviour
 
         CarRoad.SetSpeed(currCarSpeed);
         objectGenerator.SetSpeed(currCarSpeed);
+
+        SetMaxSpeed();
     }
 
     void Update()
@@ -99,6 +101,28 @@ public class CarController : MonoBehaviour
         {
             highScore = score;
             PlayerPrefs.SetInt("HighScore", highScore);
+        }
+    }
+
+    private void SetMaxSpeed()
+    {
+        switch (CarRoad.currRoad)
+        {
+            case 0:
+            {
+               maxSpeed = 2.5f; 
+               break;
+            }
+            case 1:
+            {
+               maxSpeed = 2.0f;
+               break;
+            }
+            case 2:
+            {
+               maxSpeed = 1.5f;
+               break;
+            }
         }
     }
 
