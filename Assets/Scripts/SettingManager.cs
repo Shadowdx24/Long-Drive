@@ -40,6 +40,7 @@ public class SettingManager : MonoBehaviour
 
     public void BtnTouch()
     {
+        AudioManager.instance.Play("BtnClick");
         controls = 4;
         PlayerPrefs.SetInt("CurrControls", controls);
         Toast.Show("<color=white>Enable Touch</color>",3f, ToastColor.Blue);
