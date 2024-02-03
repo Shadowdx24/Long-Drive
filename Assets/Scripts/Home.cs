@@ -40,6 +40,7 @@ public class Home : MonoBehaviour
 
     public void GameHome()
     {
+        AudioManager.instance.Play("BtnClick");
         settingsObj.SetActive(false);
     }
 }
