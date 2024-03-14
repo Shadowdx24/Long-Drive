@@ -256,7 +256,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: b0318d0db12914b9e9cc242036a8929d, type: 3}
   - {fileID: 21300000, guid: 292fed72a8cc44f5c9e2d39f013fae39, type: 3}
   - {fileID: 21300000, guid: ce8c651e3a7494bb7b27f580c7c98fad, type: 3}
-  GameSettingScene: {fileID: 1318270021}
+  settingObj: {fileID: 1318270021}
   moneyText: {fileID: 1282877160}
 --- !u!1 &189619811
 GameObject:
