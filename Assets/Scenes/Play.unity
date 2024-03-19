@@ -355,7 +355,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Game Oevr
+  m_text: Game Over
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 125cb55b44b24c4393181402bc6200e6, type: 2}
   m_sharedMaterial: {fileID: 2100000, guid: 125cb55b44b24c4393181402bc6200e6, type: 2}
@@ -1499,6 +1499,7 @@ MonoBehaviour:
   - {fileID: 2100000, guid: d72f8e6bfcf1b844a93f5e58ef4b604e, type: 2}
   - {fileID: 2100000, guid: f28833d083e87024ba26c3fda1e28ac4, type: 2}
   - {fileID: 2100000, guid: 9afe3462467b49b4db2e53b77023fe51, type: 2}
+  currRoad: 0
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
