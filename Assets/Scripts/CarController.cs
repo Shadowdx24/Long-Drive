@@ -166,35 +166,19 @@ public class CarController : MonoBehaviour
 
     private void MoveOnKeys()
     {
-        if (Input.GetKey(KeyCode.A))
+        if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
         {
             goingLeft = true;
         }
-        else if (Input.GetKey(KeyCode.D))
+        else if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))
         {
            goingRight = true;
         }
-        else if (Input.GetKeyDown(KeyCode.W))
+        else if (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow))
         {
             Accelerate();
         }
-        else if (Input.GetKeyDown(KeyCode.S))
-        {
-            Decelerate();
-        }
-        else if (Input.GetKey(KeyCode.LeftArrow))
-        {
-            goingLeft = true;
-        }
-        else if (Input.GetKey(KeyCode.RightArrow))
-        {
-            goingRight = true;
-        }
-        else if (Input.GetKeyDown(KeyCode.UpArrow))
-        {
-            Accelerate();
-        }
-        else if (Input.GetKeyDown(KeyCode.DownArrow))
+        else if (Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.DownArrow))
         {
             Decelerate();
         }
