@@ -241,7 +241,7 @@ public class CarController : MonoBehaviour
 
             Destroy(collision.gameObject);
 
-            if(currHealth == 0)
+            if(currHealth <= 0)
             {
                 Debug.Log("Game Over");
                 GameOver();
